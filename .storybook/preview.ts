@@ -19,14 +19,18 @@ const updateTheme = () => applyTheme(
   darkMatcher.matches ? Theme.DARK : Theme.LIGHT,
   document.documentElement
 );
-updateTheme();
-darkMatcher.addEventListener('change', updateTheme);
+
 
 setClient(client);
 
 const params = new URLSearchParams(location.search.slice(1));
 if (params.has('block-animations')) {
   document.body.classList.add(styles.blockAnimations);
+}
+
+if (!params.has('disable-auto-theme')) {
+  updateTheme();
+  darkMatcher.addEventListener('change', updateTheme);
 }
 
 export const parameters = {

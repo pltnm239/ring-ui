@@ -41,7 +41,7 @@ for (const {kind, stories} of items) {
 
       it(testName, async function test() {
         await this.browser.url(
-          `iframe.html?${querystring.stringify({id, 'block-animations': true, 'block-auth': true})}`,
+          `iframe.html?${querystring.stringify({id, 'block-animations': true, 'block-auth': true, 'disable-auto-theme': true})}`,
         );
 
         for (const action of allActions) {

@@ -62,7 +62,7 @@ module.exports = {
     firefox: {
       httpTimeout: 300000,
       resetCursor: false, // Prevents grid failure on performing "moveto" command
-      screenshotDelay: 500, // Wait while macOS scrollbars disappear
+      screenshotDelay: 0, // Don't wait anymore. In new versions FF scrollbar dissapears on windows too, so we need to capture it quickly
       desiredCapabilities: {
         browser: 'Firefox',
         pageLoadStrategy: 'normal',

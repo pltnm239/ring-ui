@@ -34,6 +34,13 @@ module.exports = {
       defaultView: 'all'
     }
   },
+
+  buildDiffOpts: {
+    tolerance: 5, // https://github.com/gemini-testing/looks-same#comparing-images
+    ignoreAntialiasing: true,
+    antialiasingTolerance: 7
+  },
+
   screenshotsDir: test =>
     path.join('hermione', test.browserId, test.parent.title.toLowerCase()),
 
